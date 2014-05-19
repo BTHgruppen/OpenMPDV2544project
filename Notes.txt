@@ -1,5 +1,5 @@
 -------------------------
-Quick Sort
+OMP Quick Sort
 -------------------------
 
 Size: 2048 * 2048 elements
@@ -14,7 +14,7 @@ Speedup: x times
 
 
 -------------------------
-Gaussian Elimination
+OMP Gaussian Elimination
 -------------------------
 
 Size: 2048 x 2048 matrix
@@ -29,16 +29,12 @@ Speedup: 5.85 times faster
 
 
 -------------------------
-Compile Commands
+OMP Compile Commands
 -------------------------
 
-mpicc -o quickSEQ QuickSort_Sequential.c
+mpicc -o quick QuickSort_Parallell.c
 
-mpicc -o quickPARA QuickSort_Parallell.c
-
-mpicc -o gaussSEQ GuassianElimination_Sequential.c
-
-mpicc -o gaussPARA GuassianElimination_Parallell.c -fopenmp
+mpicc -o gauss GuassianElimination_Parallell.c -fopenmp
 
 -------------------------
 
