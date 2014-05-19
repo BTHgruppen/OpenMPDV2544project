@@ -3,9 +3,10 @@
 //==================================================//
 #include <stdio.h>
 #include <stdlib.h>
+#include <mpi.h>
 
-#define ITEMS 10
-#define DEBUG 1
+#define ITEMS 2048*2048
+#define DEBUG 0
 
 static int* v;
 
@@ -17,6 +18,9 @@ static void PrintArray(void);
 
 int main(int argc, char **argv)
 {
+	MPI_Init(&argc, &argv);
+	double start_time, end_time;
+
 	// Initialize the array.
     InitArray();
 
@@ -28,8 +32,14 @@ int main(int argc, char **argv)
 		printf("===================================\n\n\n");
 	}
 
+	// Start timer.
+	start_time = MPI_Wtime();
+
 	// Quick sort the array.
     QuickSort(v, 0, (ITEMS - 1));
+
+	// Stop timer.
+	end_time = MPI_Wtime();
 
 	// Print data if in debug mode.
 	if(DEBUG)
@@ -39,7 +49,8 @@ int main(int argc, char **argv)
 		printf("===================================\n\n");
 	}
 
-	system("pause");
+	double time_taken = (end_time - start_time);
+	printf("Execution time: %f\n", time_taken);
 }
 
 // Initialization of array.

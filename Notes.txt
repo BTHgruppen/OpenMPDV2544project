@@ -1,0 +1,44 @@
+-------------------------
+Quick Sort
+-------------------------
+
+Size: 2048 * 2048 elements
+
+Sequential Quick Sort: 1.7756 seconds
+
+Parallell Quick Sort (8): x seconds
+
+Speedup: x times
+
+-------------------------
+
+
+-------------------------
+Gaussian Elimination
+-------------------------
+
+Size: 2048 x 2048 matrix
+
+Sequential Gaussian: 23.9128 seconds
+
+Parallell Gaussian (8): 4.0875 seconds
+
+Speedup: 5.85 times faster
+
+-------------------------
+
+
+-------------------------
+Compile Commands
+-------------------------
+
+mpicc -o quickSEQ QuickSort_Sequential.c
+
+mpicc -o quickPARA QuickSort_Parallell.c
+
+mpicc -o gaussSEQ GuassianElimination_Sequential.c
+
+mpicc -o gaussPARA GuassianElimination_Parallell.c -fopenmp
+
+-------------------------
+

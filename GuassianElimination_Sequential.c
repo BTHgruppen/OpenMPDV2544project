@@ -23,7 +23,7 @@ void Read_Options(int, char **);
 
 void Init_Default()
 {
-    N = 2048;
+    N = MAX_SIZE;
     Init = "rand";
     maxnum = 15.0;
     PRINT = 0;

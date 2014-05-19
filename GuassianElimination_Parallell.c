@@ -3,8 +3,10 @@
 //==================================================//
 #include <stdio.h>
 #include <mpi.h>
+#include <omp.h>
 
 #define MAX_SIZE 2048
+#define THREADS 8
 
 typedef double matrix[MAX_SIZE][MAX_SIZE];
 
@@ -23,7 +25,7 @@ void Read_Options(int, char **);
 
 void Init_Default()
 {
-    N = 2048;
+    N = MAX_SIZE;
     Init = "rand";
     maxnum = 15.0;
     PRINT = 0;
@@ -54,7 +56,7 @@ int main(int argc, char **argv)
 	// Stop timer.
 	end_time = MPI_Wtime();
 
-    if (PRINT == 1)
+    if(PRINT == 1)
 	{
 		printf("===== AFTER GUASSIAN ELIMINATION ======\n");
 		Print_Matrix();
@@ -80,6 +82,9 @@ void Work(void)
 
 		y[k] = b[k] / A[k][k];
 		A[k][k] = 1.0;
+
+		// OpenMP directive to parallellize the for-loop.
+		#pragma omp parallel for num_threads(THREADS) private(i) private(j)
 
 		for (i = k+1; i < N; i++) 
 		{

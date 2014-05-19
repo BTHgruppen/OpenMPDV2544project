@@ -9,6 +9,7 @@ Tasks:
 ==================================================
 --------------------------------------------------
 1. Implement a parallel version of Quicksort using OpenMP.
-2. Implement a parallel version of Gaussian elimination using OpenMP.
+
+Notes on how to compile the files can be found in Notes.txt
 
 --------------------------------------------------
