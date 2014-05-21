@@ -4,11 +4,11 @@ OMP Quick Sort
 
 Size: 2048 * 2048 elements
 
-Sequential Quick Sort: 1.7756 seconds
+Sequential Quick Sort: 1.7754 seconds
+Parallel Quick Sort (1 thread): 1.8711 seconds
+Parallel Quick Sort (8 threads): 0.2747 seconds
 
-Parallell Quick Sort (8): x seconds
-
-Speedup: x times
+Speedup: 6.4 times
 
 -------------------------
 
@@ -20,8 +20,8 @@ OMP Gaussian Elimination
 Size: 2048 x 2048 matrix
 
 Sequential Gaussian: 23.9128 seconds
-
-Parallell Gaussian (8): 4.0875 seconds
+Parallel Gaussian (1 thread):
+Parallel Gaussian (8 threads): 4.0875 seconds
 
 Speedup: 5.85 times faster
 

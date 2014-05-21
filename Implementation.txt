@@ -1,0 +1,4 @@
+1. Quicksort
+
+The parallel quicksort implementation will first check how many threads are available on the system. Each thread will be assigned a fraction of the array to be sorted and will quicksort that fraction.
+These fractions will be internally sorted, but the entire array is not yet sorted. To solve this,the fractions are merged on a single thread. After the merge, the entire array will be sorted. 
