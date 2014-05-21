@@ -1,0 +1,15 @@
+-------------------------
+HOW TO COMPILE
+-------------------------
+NOTE: The mpicc command is only used to access the MPI timer functions used for timing the project.
+Otherwise no other MPI functions are used.
+
+QuickSort:
+mpicc -o quick QuickSort_Parallell.c -fopenmp
+
+Gaussian Elimination:
+mpicc -o gauss GuassianElimination_Parallell.c -fopenmp
+
+Run the files with /.quick and /.gauss respectively.
+-------------------------
+
